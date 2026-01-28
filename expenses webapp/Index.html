@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker Ultimate</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="theme-toggle">
+        <button id="toggle-theme">🌙 Dark Mode</button>
+    </div>
+
+    <div class="container">
+        <h1>Expense Tracker Ultimate</h1>
+
+        <div class="alert-container" id="alert-container"></div>
+
+        <div class="form-container card">
+            <h2>Add Expense</h2>
+            <form id="expense-form">
+                <input type="text" id="description" placeholder="Description" required>
+                <input type="number" id="amount" placeholder="Amount" required>
+                <select id="category" required>
+                    <option value="">Select Category</option>
+                    <option value="Food">🍔 Food</option>
+                    <option value="Transport">🚌 Transport</option>
+                    <option value="Entertainment">🎬 Entertainment</option>
+                    <option value="Shopping">🛍️ Shopping</option>
+                    <option value="Bills">💡 Bills</option>
+                    <option value="Other">📌 Other</option>
+                </select>
+                <input type="date" id="date" required>
+                <button type="submit">Add Expense</button>
+            </form>
+        </div>
+
+        <div class="goals-container card">
+            <h2>Monthly Goal</h2>
+            <input type="number" id="monthly-goal" placeholder="Set Monthly Goal">
+            <button id="save-goal">Save Goal</button>
+            <div class="goal-stats">
+                <p id="goal-display">Goal: R0</p>
+                <p id="total-display">Total Spent: R0</p>
+                <p id="remaining-display">Remaining: R0</p>
+            </div>
+        </div>
+
+        <div class="table-container card">
+            <h2>Expenses</h2>
+            <table id="expenses-table">
+                <thead>
+                    <tr>
+                        <th>Description</th>
+                        <th>Amount</th>
+                        <th>Category</th>
+                        <th>Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Expenses will appear here -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="chart-container card">
+            <h2>Spending by Category</h2>
+            <canvas id="categoryChart"></canvas>
+        </div>
+
+        <div class="chart-container card">
+            <h2>Monthly Trend</h2>
+            <canvas id="trendChart"></canvas>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
